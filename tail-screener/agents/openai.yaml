@@ -1,0 +1,13 @@
+interface:
+  display_name: "短线候选 · HGB33实验版"
+  short_description: "按用户资金与期限筛选，运行HGB33实验候选排序，并核对K线及原流动性名次"
+  default_prompt: "使用 $tail-screener 按我输入的资金、仓位和持有期选出实验研究候选，展示模型与原排序的区别。"
+  icon_small: "assets/icon.svg"
+  icon_large: "assets/icon.svg"
+policy:
+  allow_implicit_invocation: true
+  products:
+  - "chatgpt"
+  - "codex"
+  - "api"
+  - "atlas"

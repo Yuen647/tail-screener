@@ -1,0 +1,380 @@
+{
+  "model_recovery": {
+    "model_path": "models/hgb33-fold2021.json",
+    "sha256": "5b73afc769b9de10b7ef5e32f2d10d699c2a50e648c7477d3aea2610f5968a8d",
+    "bytes": 194046,
+    "created_at": "2026-10-18T04:33:05.438997+00:00",
+    "recovered_2021_top6_predictions": 1386,
+    "max_abs_difference": 0.0,
+    "all_231_daily_top6_orders_identical": true,
+    "holdout2024_2025_opened": false,
+    "training": {
+      "first_year": 2016,
+      "last_year": 2020,
+      "last_signal": "2020-12-15",
+      "label_holding_sessions": 2,
+      "nominal_budget_yuan": 4750,
+      "pool": "ma",
+      "exit": "ma",
+      "sklearn_version": "1.8.0",
+      "parameters": {
+        "categorical_features": "from_dtype",
+        "early_stopping": false,
+        "interaction_cst": null,
+        "l2_regularization": 10,
+        "learning_rate": 0.05,
+        "loss": "squared_error",
+        "max_bins": 255,
+        "max_depth": null,
+        "max_features": 1.0,
+        "max_iter": 150,
+        "max_leaf_nodes": 7,
+        "min_samples_leaf": 500,
+        "monotonic_cst": null,
+        "n_iter_no_change": 10,
+        "quantile": null,
+        "random_state": 1729,
+        "scoring": "loss",
+        "tol": 1e-07,
+        "validation_fraction": 0.1,
+        "verbose": 0,
+        "warm_start": false
+      },
+      "dataset_sha256": "0325ac9bc351e9cf33a1968e66f0d1ad5a934723ae439c8e25df593ad97a944e",
+      "training_script_sha256": "01031ed59758add0b6b3990a51a263277ebaa0dc51be149d6b1cf8c8e4288be1"
+    }
+  },
+  "historical_comparison": {
+    "original_filled_net_pct": -0.40757335089090985,
+    "hgb33_filled_net_pct": 0.04167647188145803,
+    "hgb33_trim5_pct": -0.1386877428470503,
+    "period": "2019-2021 walk-forward, not one final fold or current-market profitability"
+  },
+  "promotion_passed": false,
+  "development_evidence": {
+    "passed": false,
+    "failures": [
+      "nonpositive:remove_top5_filled_net_pct",
+      "uncertain:vs_original",
+      "uncertain:vs_matched"
+    ],
+    "pooled": {
+      "new": {
+        "slots": 1388,
+        "counts": {
+          "cancelled": 179,
+          "filled": 1197,
+          "unresolved": 12,
+          "vacant": 0
+        },
+        "known_slot_net_pct": 0.03625489596083234,
+        "filled_net_pct": 0.04167647188145803,
+        "filled_gross_pct": 0.5183813920766829,
+        "filled_cost_pct": 0.4767049201952249,
+        "filled_win_pct": 44.11027568922306,
+        "filled_p10_pct": -5.604547368421052,
+        "remove_top5_filled_net_pct": -0.1386877428470503
+      },
+      "original": {
+        "slots": 1388,
+        "counts": {
+          "cancelled": 89,
+          "filled": 1279,
+          "unresolved": 20,
+          "vacant": 0
+        },
+        "known_slot_net_pct": -0.3810572483841182,
+        "filled_net_pct": -0.40757335089090985,
+        "filled_gross_pct": 0.04551253034854527,
+        "filled_cost_pct": 0.45308588123945515,
+        "filled_win_pct": 40.65676309616888,
+        "filled_p10_pct": -4.589726315789474,
+        "remove_top5_filled_net_pct": -0.4792130876642155
+      },
+      "matched": {
+        "slots": 1388,
+        "counts": {
+          "cancelled": 89,
+          "filled": 1279,
+          "unresolved": 20,
+          "vacant": 0
+        },
+        "known_slot_net_pct": -0.3810572483841182,
+        "filled_net_pct": -0.40757335089090985,
+        "filled_gross_pct": 0.04551253034854527,
+        "filled_cost_pct": 0.45308588123945515,
+        "filled_win_pct": 40.65676309616888,
+        "filled_p10_pct": -4.589726315789474,
+        "remove_top5_filled_net_pct": -0.4792130876642155
+      }
+    },
+    "annual": {
+      "2019": {
+        "new": {
+          "slots": 464,
+          "counts": {
+            "cancelled": 63,
+            "filled": 398,
+            "unresolved": 3,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.09380614225368195,
+          "filled_net_pct": -0.10865485321343551,
+          "filled_gross_pct": 0.3682623644538482,
+          "filled_cost_pct": 0.47691721766728373,
+          "filled_win_pct": 45.22613065326633,
+          "filled_p10_pct": -5.220652631578948,
+          "remove_top5_filled_net_pct": -0.504063211463774
+        },
+        "original": {
+          "slots": 464,
+          "counts": {
+            "cancelled": 27,
+            "filled": 432,
+            "unresolved": 5,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.24598922141956195,
+          "filled_net_pct": -0.26136354775828463,
+          "filled_gross_pct": 0.1978070175438596,
+          "filled_cost_pct": 0.45917056530214423,
+          "filled_win_pct": 42.824074074074076,
+          "filled_p10_pct": -3.7312210526315788,
+          "remove_top5_filled_net_pct": -0.4424227782571182
+        }
+      },
+      "2020": {
+        "new": {
+          "slots": 462,
+          "counts": {
+            "cancelled": 75,
+            "filled": 380,
+            "unresolved": 7,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.023187507229612502,
+          "filled_net_pct": -0.02776398891966757,
+          "filled_gross_pct": 0.4478116343490305,
+          "filled_cost_pct": 0.47557562326869807,
+          "filled_win_pct": 42.89473684210526,
+          "filled_p10_pct": -6.285936842105262,
+          "remove_top5_filled_net_pct": -0.3996328421052629
+        },
+        "original": {
+          "slots": 462,
+          "counts": {
+            "cancelled": 32,
+            "filled": 422,
+            "unresolved": 8,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.2983565963366566,
+          "filled_net_pct": -0.3209807932152657,
+          "filled_gross_pct": 0.12456971813419797,
+          "filled_cost_pct": 0.44555051134946366,
+          "filled_win_pct": 40.047393364928915,
+          "filled_p10_pct": -3.8768210526315787,
+          "remove_top5_filled_net_pct": -0.47680626025495415
+        }
+      },
+      "2021": {
+        "new": {
+          "slots": 462,
+          "counts": {
+            "cancelled": 41,
+            "filled": 419,
+            "unresolved": 2,
+            "vacant": 0
+          },
+          "known_slot_net_pct": 0.22539496567505712,
+          "filled_net_pct": 0.24745032031151867,
+          "filled_gross_pct": 0.7249777666122347,
+          "filled_cost_pct": 0.4775274463007161,
+          "filled_win_pct": 44.1527446300716,
+          "filled_p10_pct": -5.025305263157895,
+          "remove_top5_filled_net_pct": -0.11412204424103768
+        },
+        "original": {
+          "slots": 462,
+          "counts": {
+            "cancelled": 30,
+            "filled": 425,
+            "unresolved": 7,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.5998315789473684,
+          "filled_net_pct": -0.6421726315789472,
+          "filled_gross_pct": -0.18778947368421045,
+          "filled_cost_pct": 0.4543831578947368,
+          "filled_win_pct": 39.05882352941176,
+          "filled_p10_pct": -5.507199999999999,
+          "remove_top5_filled_net_pct": -0.8316932330827065
+        }
+      }
+    },
+    "uncertainty": {
+      "lower_quantile": 0.00625,
+      "draws": 5000,
+      "block": 20,
+      "seed": 1729,
+      "metrics": {
+        "absolute": {
+          "mean_complete_day_pct": 0.042093841642228756,
+          "lower_pct": -0.3646387675266209,
+          "upper_pct": 0.4727508290026856,
+          "complete_days": 682,
+          "missing_days": [
+            "2019-04-25",
+            "2019-06-11",
+            "2019-07-09",
+            "2020-01-21",
+            "2020-04-09",
+            "2020-06-02",
+            "2020-06-05",
+            "2020-07-03",
+            "2020-08-19",
+            "2020-09-25",
+            "2021-03-29",
+            "2021-07-22"
+          ]
+        },
+        "vs_original": {
+          "mean_complete_day_pct": 0.3987365250475587,
+          "lower_pct": -0.06880436293439589,
+          "upper_pct": 0.8664562019941677,
+          "complete_days": 664,
+          "missing_days": [
+            "2019-02-19",
+            "2019-02-21",
+            "2019-02-22",
+            "2019-04-25",
+            "2019-06-11",
+            "2019-06-14",
+            "2019-06-17",
+            "2019-07-09",
+            "2020-01-21",
+            "2020-04-09",
+            "2020-05-19",
+            "2020-05-20",
+            "2020-06-02",
+            "2020-06-05",
+            "2020-07-01",
+            "2020-07-02",
+            "2020-07-03",
+            "2020-08-18",
+            "2020-08-19",
+            "2020-08-20",
+            "2020-09-25",
+            "2021-03-29",
+            "2021-05-18",
+            "2021-07-05",
+            "2021-07-06",
+            "2021-07-07",
+            "2021-07-09",
+            "2021-07-12",
+            "2021-07-13",
+            "2021-07-22"
+          ]
+        },
+        "vs_matched": {
+          "mean_complete_day_pct": 0.3987365250475587,
+          "lower_pct": -0.06880436293439589,
+          "upper_pct": 0.8664562019941677,
+          "complete_days": 664,
+          "missing_days": [
+            "2019-02-19",
+            "2019-02-21",
+            "2019-02-22",
+            "2019-04-25",
+            "2019-06-11",
+            "2019-06-14",
+            "2019-06-17",
+            "2019-07-09",
+            "2020-01-21",
+            "2020-04-09",
+            "2020-05-19",
+            "2020-05-20",
+            "2020-06-02",
+            "2020-06-05",
+            "2020-07-01",
+            "2020-07-02",
+            "2020-07-03",
+            "2020-08-18",
+            "2020-08-19",
+            "2020-08-20",
+            "2020-09-25",
+            "2021-03-29",
+            "2021-05-18",
+            "2021-07-05",
+            "2021-07-06",
+            "2021-07-07",
+            "2021-07-09",
+            "2021-07-12",
+            "2021-07-13",
+            "2021-07-22"
+          ]
+        }
+      }
+    }
+  },
+  "integration_plan": {
+    "purpose": "Integrate the existing study06 ma_pool_ma_exit HGB33 as an opt-in research ranker; not a new strategy trial or validated promotion.",
+    "model_recovery": "Recreate the final saved walk-forward fold: train years2016-2020, compare predictions against saved2021 top6. Do not fit through2023, do not tune, do not read2024/2025.",
+    "runtime": "Read-only report+same-hash snapshot reranking; all original strict candidate exclusions retained; ranking never grants order eligibility.",
+    "scope": "Model label H2, nominal training budget4750yuan; model use at other budgets is explicit transfer outside tested configuration, other horizons unsupported without silently overriding user input.",
+    "parameters": "capital, position limit and display remain independent inputs; no current account modified.",
+    "created_at": "2026-10-18T04:31:31.983541+00:00"
+  },
+  "numeric_inference_validation": {
+    "rows": 17479,
+    "max_abs_error": 0.0
+  },
+  "parameter_validation": {
+    "independent_display_count": true,
+    "cases": [
+      {
+        "capital_cents": 1000000,
+        "positions": 1,
+        "holding": 2,
+        "top": 3,
+        "status": "computed",
+        "nominal_budget_yuan": 9500.0,
+        "displayed": 3
+      },
+      {
+        "capital_cents": 2000000,
+        "positions": 2,
+        "holding": 2,
+        "top": 4,
+        "status": "computed",
+        "nominal_budget_yuan": 9500.0,
+        "displayed": 4
+      },
+      {
+        "capital_cents": 1000000,
+        "positions": 6,
+        "holding": 5,
+        "top": 2,
+        "status": "unsupported_horizon",
+        "nominal_budget_yuan": 1583.33,
+        "displayed": 0
+      }
+    ],
+    "source_and_snapshot_unchanged": true,
+    "source_report_sha256": "fd8804d122dfd0488ce4e277f79d6ce221ae5bd6bea2ba5a09d41e8e97338c62",
+    "scope": "offline functional validation only"
+  },
+  "independent_feature_review": "# Independent numerical feature review\n\nReviewed 2026-10-18 using the skill-creator independent validation workflow. Scope was `tail-screener/scripts/tail_screener/experimental_features.py`, frozen `selection-research-next/structure-study/data.py`, and production scalar `cents`, `fee`, and `_quantity` in the candidate package's `account_engine.py`. No market datasets, outcome datasets, 2024/2025 data, account state, or model results were opened. No implementation or account files were changed.\n\n**Result: PASS within the tested input contract.** No formula or numerical equivalence discrepancy was found. The implementation SHA-256 reviewed was `1843c84f9ce1f5f260c508f0c1c3315d94ef95e62c3f82847f917bf55865c67f`.\n\n## Evidence\n\n- Parsed the frozen source without executing its imports, `load`, `labels`, or `main`. Extracted only `fees`, `money`, `quantity`, `percentiles`, `rows`, and the feature-list assignments.\n- AST comparison found exact function equivalence for all five functions after renaming `rows` to `research_rows`.\n- All 33 feature names and their order equal the frozen list.\n- Compared all five return values on 120 deterministic synthetic 20-day panels with 17 securities, varied factors, prices, amount, valid/active masks and empty pools. Arrays matched exactly, including indices, features, ceilings, average amount, and MA flags. Output feature shape was `(eligible_count, 33)`; empty pools retained `(0, 33)`. Returned indices followed ascending input-column order.\n- Compared 187,192 vector fee results with sums of scalar component fees, spanning both sides of the 2022-04-29 and 2023-08-28 fee transitions, minimum commission boundaries, cent rounding boundaries and random positive notionals. Exact equality.\n- Compared 20,006 `money` outputs with scalar `cents`, including exact and adjacent half-cent values and random positive amounts. Exact equality.\n- Compared 3,080 quantity results with scalar `_quantity(..., multiplier=1)`, spanning seven cent budgets, both board-lot types, prices from ¥0.01 to ¥10,000, rounding cases, and all four fee-date cases. Quantities, gross cents and total buy fees matched exactly and stayed within budget.\n- Independently calculated one complete 33-feature case and compared with tolerance `1e-14`: adjusted closes ¥20.00 through ¥21.90, factor 2, daily amount 10,000 source units, and budget 1,900,000 cents. Raw last price ¥10.95; quantity 1,700 shares; gross 1,861,500 cents; buy fees 558 commission + 19 transfer + 1,862 slippage = 2,439 cents. Singleton percentile features were zero.\n- Checked unique, tied and singleton percentile samples: ranks use centered average empirical ranks, including all-ties → zero.\n- Checked exact ¥10m amount inclusion, just-below exclusion, full-window validity, current active mask, the inclusive 8% close/MA20 boundary and just-above exclusion, and zero daily range → location 0.5.\n- Multiplying adjusted OHLC and adjustment factors together by 2 preserved raw-price economics, all features, eligibility, ceilings and flags.\n\n## Formula and unit findings\n\n| Item | Verified behavior |\n|---|---|\n| Returns | 1, 3, 5 and 19 session close ratios; daily sample standard deviation over 19 returns (`ddof=1`). |\n| Amount | Source amount multiplied by 1,000 into yuan; amount features use this unadjusted monetary series. Eligibility uses 20-session average ≥ ¥10m. |\n| Last-five amount measures | Up-amount uses the last five return signs paired with their destination-day amounts; amount ratio is last-five mean / 20-session mean. |\n| Price and ceilings | Raw price = adjusted close / factor; ceiling = min(raw price × 1.03, adjusted MA20 / current factor × 1.08). |\n| Cash | Budget, gross and fees are cents; prices are yuan/share; quantity is shares. |\n| Lots | `SH688` uses one-share increments above a 200-share minimum; other codes use 100-share increments and minimum. |\n| Costs | Round-trip cost assumes sale at the same gross and date, divides buy + sell fees by total budget; invested fraction is gross / budget. Cost multiplier is fixed to scalar production multiplier 1. |\n| Market context | Median five-session return and positive-return breadth use all active securities with 20 valid bars, including names excluded from candidate eligibility for amount, premium or affordability. |\n| MA additions | MA5 / MA20 − 1; MA5 / previous five-session MA − 1; then their cross-sectional percentile ranks. MA-pool flag uses strict MA5 > MA20. |\n\n## Float32 and caller requirements\n\n`research_rows` itself returns float64 features for float64 panels, exactly as frozen `rows`. Frozen dataset construction subsequently applies `x.astype(np.float32)` before concatenation. All 120 synthetic panels matched bit-for-bit after that conversion. Largest observed absolute float32 rounding change was `9.5277153633333e-07`; this is expected representation loss, not a discrepancy.\n\nA runtime caller must preserve the frozen sequence: build float64 field panels, calculate features, convert features to float32 before reproducing training-time prediction inputs, and preserve feature order. This review does not establish that a caller performs that conversion. Raw float32 panel input can round intermediate means and ratios before the final cast and is not the frozen loading contract.\n\nThe primitive assumes aligned two-dimensional field arrays, matching Unicode code columns, positive finite price/factor values for usable bars, a positive cent budget, and at least 20 available bars (`t >= 19`). It does not implement input-schema validation or live-account policy enforcement. Testing was restricted to valid synthetic financial inputs; no claim is made for negative cash/price or noncanonical code inputs.\n\n## Reproduction\n\nExecuted `/workspace/scratch/42f05790f224/feature_review_check.py` with `/opt/codex/runtimes/codex-primary-runtime/dependencies/python/bin/python3`; final exit code 0. Synthetic RNG seed: 80146. The script is a review fixture outside the skill package. Runtime integration and model prediction equivalence remain outside this file-level review.\n",
+  "independent_integration_review": "# Experimental ranking integration review\n\nReviewed 2026-10-18. Scope: `experimental_hgb.py`, `experimental_ranking.py`, `experimental_features.py`, `rank_experimental.py`, and `docs/experimental-ranking.md`, plus the directly used account scan/store/config interfaces. No implementation, account, source report, or snapshot was changed. No retraining or 2024–2025 outcome access was performed.\n\n## Findings\n\nNo unresolved blocking defect remains in the reviewed scope after the narrow fixes below were independently checked.\n\n1. **Resolved: unlimited holding horizon.** The first revision rejected the valid baseline `max_holding_sessions=None` configuration. The final revision reuses canonical `account_config()` validation; an in-memory report with `None` now returns `unsupported_horizon`, retains the input, and emits no model candidates.\n2. **Resolved: defensive configuration validation.** The final revision reuses baseline upper bounds and finite/range checks and requires the supported 5% reserve. Independently verified rejection of 51 positions, H61, NaN entry limit, infinite premium limit, boolean entry limit, and a 10% reserve. Normal source behavior is unchanged.\n3. **Documented upgrade compatibility limitation.** Existing `account_strategy.rule_identity()` hashes all Python files under `scripts`, including these additions. Existing journal continuation will therefore be rejected by `update_forward_account()` after installing the package. This conservative protection remains intact; no automatic exemption or migration was introduced. The standalone ranker does not invoke the account update. The final documentation explicitly distinguishes read-only reranking from normal scan/account isolation.\n4. **Strengthened model availability boundary confirmed.** The final revision rejects signal years through training year 2020, because label exits can occur after the last training signal. Independently verified rejection of 2020-12-16 with `signal_not_after_training_year`. The documentation now explicitly limits first use to 2021 onward.\n5. **Final evidence-preservation change confirmed.** The reranker requests all strictly eligible scan rows internally and copies `entry_price_ceiling`, `holding_rule`, and `price_diagnostics` by code. All three fields exactly matched an independent fresh strict scan for all 985 ranked rows. The final order and scores exactly matched the saved preview; requesting all rows only expands the source of copied evidence and does not change model eligibility or order.\n\n## Verified behavior\n\n- The 194,046-byte numeric model's SHA-256 matches the packaged recovery evidence: `5b73afc769b9de10b7ef5e32f2d10d699c2a50e648c7477d3aea2610f5968a8d`.\n- Inference is bounded numeric JSON with duplicate-key, schema/feature-order, model-ID, tree count/size/graph, and finite feature checks. No pickle loading or training path is used. All **17,479 × 33** stored inference-check rows reproduced the stored expected predictions **exactly**, maximum absolute difference **0.0**.\n- Packaged provenance identifies the recovered 2021 fold trained on 2016–2020 signals, last training signal 2020-12-15, H2 labels, sklearn 1.8.0, fixed hyperparameters, and training data/script hashes. The runtime requires NumPy and existing package imports, not sklearn. Recovery evidence records 1,386 historical prediction matches and 231 identical daily top-six orders; this review independently rechecked numerical inference but did not repeat training or independently rederive those historical provenance claims.\n- Exact report `/workspace/scratch/42f05790f224/selection-research-next/kline-study/preview/report.json` and its referenced 2026-10-16 snapshot produced **985** scored strict candidates, `status=computed`, budget **4,750 yuan**. Top six: SZ001206, SZ300386, SH601118, SZ300916, SZ300941, SH603172.\n- `top=1` and `top=6` produced identical complete rankings and unchanged account configuration/budget. Display selection is independent of account slots.\n- In-memory capital/slot scenarios reproduced strict scan statistics before ranking: 20,000 yuan / 4 slots retained the 4,750-yuan budget and same top six; 20,000 yuan / 2 slots used 9,500 yuan and explicitly marked the tested budget/entry scope as unmatched. Requesting ten displayed rows did not change slots.\n- Relaxing premium from 8% to 12% produced `partial`, preserved 985 scored candidates, and listed **39** additional strict candidates as `unscored`; no scores were fabricated for the frozen pool's out-of-scope securities.\n- H1/H3/H5/H60 returned `unsupported_horizon`, retained the requested horizon, and emitted zero candidates. The initial `None` defect was reproduced, then its correction independently verified.\n- Altered incomplete status, requested-session mismatch, incorrect snapshot digest, and altered bullish count were each rejected. The model hash, snapshot envelope hash, report-linked snapshot hash, final snapshot session, training cutoff, and reconstructed scan counts are checked.\n- The report and snapshot hashes remained unchanged after ranking. A separate runtime audit hook blocked filesystem writes, mkdir/remove/rename, and socket connection attempts; `load_and_rank()` still completed successfully with `account_changed=false`. The CLI alone creates the requested new/empty output directory and writes its two deliverables.\n- CLI output is restricted to new/empty directories; serialized JSON forbids NaN; HTML values are escaped. Source reports and snapshot paths are read only. No account transaction/order functions are called.\n\n## Limits and interpretation\n\nThe current snapshot's market context contains **5,094 complete / 5,130 age-qualified symbols**, with 36 missing windows. `context_complete=false` and missing codes are exposed; `computed` denotes complete scoring of strict candidates, not complete market context. This is documented and should remain prominent in delivery.\n\nThe snapshot digest binds report and snapshot content; it is not a cryptographic attestation of the original provider or report authenticity. Reproduction checks compare screen category counts, while the candidate rows are freshly reconstructed from the exact snapshot and source exclusions. Per-symbol announcement checks are explicitly not inherited. Scores are uncalibrated research outputs; promotion remains failed, and the historical three-fold statistics are not represented as this single model's current return.\n\nRuntime used: `/workspace/scratch/42f05790f224/tail-cloud-v2/.runtime/cpython-312-linux-x86_64-90e02e314242a91e/bin/python -B`. Tests used in-memory configuration/report copies and did not create replacement account state or fetch market data. A final normal source rerun after the validation changes retained `computed`, 985 candidates, and the same top six.\n",
+  "forward_scenario": {
+    "completed": true,
+    "scored": 985,
+    "displayed": 6,
+    "overlap_with_baseline": 0,
+    "source_unchanged": true,
+    "context_complete": false,
+    "complete_context_symbols": 5094,
+    "active_context_symbols": 5130
+  },
+  "release_status": "experimental_not_profitability_validated"
+}

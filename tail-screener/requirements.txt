@@ -1,0 +1,4 @@
+requests>=2.31.0,<3.0
+exchange-calendars>=4.13,<5.0
+pandas>=2.2.0,<3.1
+tzdata>=2025.2

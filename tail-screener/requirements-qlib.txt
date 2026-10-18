@@ -1,0 +1,13 @@
+# Validated stock-model runtime, isolated from the legacy data/diagnostic profile.
+# Versions below are the actual Python 3.12 validation environment.
+requests==2.34.2
+exchange-calendars==4.13.2
+pandas==3.0.6
+numpy==2.5.4
+tzdata==2026.5
+pyqlib==0.9.7
+lightgbm==4.7.0
+mlflow==3.17.1
+pyarrow==25.0.1
+scipy==1.18.1
+scikit-learn==1.9.1

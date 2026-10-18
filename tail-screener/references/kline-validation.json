@@ -1,0 +1,457 @@
+{
+  "release": "3.4.0-kline-evidence",
+  "study": 13,
+  "created_at": "2026-10-18T04:22:27.748876+00:00",
+  "economic_goal_resolved": false,
+  "ranking_promoted": false,
+  "conclusion": "新增K线计算、图表及全合格候选形态检索；本轮K线排序未通过验证，原默认排序保留。",
+  "source_provenance": {
+    "cloud_uri": "skill://user/6ad3c3758b688191b8715848ec4771b4/tail-screener",
+    "cloud_version": 2,
+    "bundle_sha256": "251d657cbad7ac20f056418e65d5ea7c564922a42abe7cde2df5bc31d25cbfe4",
+    "source_version": "3.3.2-runtime-parameters",
+    "verified_program_and_resource_files": 93,
+    "host_metadata_matches_current_cloud_bytes": [
+      {
+        "path": "agents/openai.yaml",
+        "actual_cloud_sha256": "db851ec61c101d41fa55365d4884beabcb9cde5aceaffea33414f0158134fabb",
+        "manifest_sha256": "4b758ee20886005bf89192602df076325f76727549484f07acbe29f8c94418ac"
+      }
+    ]
+  },
+  "registration": {
+    "study": "13: final authorized batch",
+    "created_at": "2026-10-18T04:10:51.717833+00:00",
+    "hypothesis": "Three completed candles, real-body/shadow geometry and multi-bar envelopes contain incremental short-horizon information beyond the fixed33-price-feature baseline. Test one fixed40-feature extension, not a pattern parameter search.",
+    "features": "27 body/range/shadow/balance metrics at lags0,1,2;13 envelope,body-engulf,prior5/19high/low,range-compression,amount-ratio,3periodprogress,and failed-breakout/recovery fields. All20bars end at signal close.",
+    "source": "Same archived2016-2023 data, strict originalMApool and execution. All2016-2023 are repeatedly used development data, not untouched holdout. No2024/2025 access.",
+    "preflight": "Before fitting confirm finite40-feature availability for >=99% of originalMArows, >=200 signal dates and >=200 potentialtop2slots each2019,2020,2021; preserve alloriginal dates/unknowns. Failure means no trained ranking, deliver functional source-basedKline module.",
+    "model": "Fixed HGB7:max_iter150,lr.05,min_samples_leaf500,L2=10,noearlystop,seed1729; cliptraininglabel ±.2; equal-date weights. Same model and training rows as study06. Train allprior2016+ for each2019,2020,2021. One extension,no tuning.",
+    "controls": "OriginalMAliquiditytop2 and identical33-featureHGB study06 top2 on allsame dates. Showtop6separately; no prediction>0filter. Use original unmodified exact fees/slippage/cancellation/unknown/MAexitH2 labels.",
+    "runtime_case_only": {
+      "capital_yuan": 10000,
+      "max_positions": 2,
+      "display_candidates": 6,
+      "holding_sessions": 2
+    },
+    "gates": "Eachyear>=100filled,unknown<=2%slots,known-slot>=original; pooledfillednet,knownslotnet,trimtop5net>0; pooledknownslot>bothcontrols; p10 no morethan2ppworseoriginal; absolute andpairedvsbothcontrols blockCI lower>0,year-stratified20tradingdateblocks5000drawsseed1729q=.05/8. These gates cannot be reduced after outcomes.",
+    "confirmation": "Only if all pass, train2016-2021 once and evaluate2022-2023 using original and freshlysame-period33featurecontrol; samegates,q=.05/8. H5onlyifH2confirmationpasses. Final2024-2025 and finitecashvalidation require separatelyfrozen plan before any promotion.",
+    "delivery": "Must deliver complete installable skillZIP this batch. Include tested Kline computation, explicit numeric geometry/levels/amount comparison and source-input chart. A failed ranking is not enabled as improveddefault; candidate andmaxpositionsandhorizon remain independent inputs. No Git peruser."
+  },
+  "decision": {
+    "development_passed": false,
+    "release_ranking_allowed": false,
+    "heldout_opened": false,
+    "one_fixed_variant": true
+  },
+  "development_results": {
+    "passed": false,
+    "failures": [
+      "2019:below_original",
+      "2020:below_original",
+      "nonpositive:filled_net_pct",
+      "nonpositive:known_slot_net_pct",
+      "nonpositive:remove_top5_filled_net_pct",
+      "not_better:matched",
+      "uncertain:vs_original",
+      "uncertain:vs_matched",
+      "uncertain:absolute"
+    ],
+    "pooled": {
+      "new": {
+        "slots": 1388,
+        "counts": {
+          "cancelled": 165,
+          "filled": 1210,
+          "unresolved": 13,
+          "vacant": 0
+        },
+        "known_slot_net_pct": -0.1931336267942584,
+        "filled_net_pct": -0.21947003044802094,
+        "filled_gross_pct": 0.2570990865593736,
+        "filled_cost_pct": 0.4765691170073945,
+        "filled_win_pct": 41.81818181818181,
+        "filled_p10_pct": -5.526610526315789,
+        "remove_top5_filled_net_pct": -0.3376024459488971
+      },
+      "original": {
+        "slots": 1388,
+        "counts": {
+          "cancelled": 89,
+          "filled": 1279,
+          "unresolved": 20,
+          "vacant": 0
+        },
+        "known_slot_net_pct": -0.3810572483841182,
+        "filled_net_pct": -0.40757335089090985,
+        "filled_gross_pct": 0.04551253034854527,
+        "filled_cost_pct": 0.45308588123945515,
+        "filled_win_pct": 40.65676309616888,
+        "filled_p10_pct": -4.589726315789474,
+        "remove_top5_filled_net_pct": -0.4792130876642155
+      },
+      "matched": {
+        "slots": 1388,
+        "counts": {
+          "cancelled": 179,
+          "filled": 1197,
+          "unresolved": 12,
+          "vacant": 0
+        },
+        "known_slot_net_pct": 0.03625489596083234,
+        "filled_net_pct": 0.04167647188145803,
+        "filled_gross_pct": 0.5183813920766829,
+        "filled_cost_pct": 0.4767049201952249,
+        "filled_win_pct": 44.11027568922306,
+        "filled_p10_pct": -5.604547368421052,
+        "remove_top5_filled_net_pct": -0.1386877428470503
+      }
+    },
+    "annual": {
+      "2019": {
+        "new": {
+          "slots": 464,
+          "counts": {
+            "cancelled": 53,
+            "filled": 410,
+            "unresolved": 1,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.31981129930658175,
+          "filled_net_pct": -0.36115275994865204,
+          "filled_gross_pct": 0.11419768934531455,
+          "filled_cost_pct": 0.4753504492939666,
+          "filled_win_pct": 42.4390243902439,
+          "filled_p10_pct": -5.068147368421052,
+          "remove_top5_filled_net_pct": -0.5637983105912932
+        },
+        "original": {
+          "slots": 464,
+          "counts": {
+            "cancelled": 27,
+            "filled": 432,
+            "unresolved": 5,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.24598922141956195,
+          "filled_net_pct": -0.26136354775828463,
+          "filled_gross_pct": 0.1978070175438596,
+          "filled_cost_pct": 0.45917056530214423,
+          "filled_win_pct": 42.824074074074076,
+          "filled_p10_pct": -3.7312210526315788,
+          "remove_top5_filled_net_pct": -0.4424227782571182
+        }
+      },
+      "2020": {
+        "new": {
+          "slots": 462,
+          "counts": {
+            "cancelled": 56,
+            "filled": 400,
+            "unresolved": 6,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.5635152354570637,
+          "filled_net_pct": -0.6424073684210526,
+          "filled_gross_pct": -0.16657894736842108,
+          "filled_cost_pct": 0.47582842105263157,
+          "filled_win_pct": 38.75,
+          "filled_p10_pct": -6.601515789473683,
+          "remove_top5_filled_net_pct": -0.8870267821452366
+        },
+        "original": {
+          "slots": 462,
+          "counts": {
+            "cancelled": 32,
+            "filled": 422,
+            "unresolved": 8,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.2983565963366566,
+          "filled_net_pct": -0.3209807932152657,
+          "filled_gross_pct": 0.12456971813419797,
+          "filled_cost_pct": 0.44555051134946366,
+          "filled_win_pct": 40.047393364928915,
+          "filled_p10_pct": -3.8768210526315787,
+          "remove_top5_filled_net_pct": -0.47680626025495415
+        }
+      },
+      "2021": {
+        "new": {
+          "slots": 462,
+          "counts": {
+            "cancelled": 56,
+            "filled": 400,
+            "unresolved": 6,
+            "vacant": 0
+          },
+          "known_slot_net_pct": 0.3058702677746999,
+          "filled_net_pct": 0.34869210526315786,
+          "filled_gross_pct": 0.8272510526315789,
+          "filled_cost_pct": 0.4785589473684211,
+          "filled_win_pct": 44.25,
+          "filled_p10_pct": -4.783389473684211,
+          "remove_top5_filled_net_pct": 0.01218387741505705
+        },
+        "original": {
+          "slots": 462,
+          "counts": {
+            "cancelled": 30,
+            "filled": 425,
+            "unresolved": 7,
+            "vacant": 0
+          },
+          "known_slot_net_pct": -0.5998315789473684,
+          "filled_net_pct": -0.6421726315789472,
+          "filled_gross_pct": -0.18778947368421045,
+          "filled_cost_pct": 0.4543831578947368,
+          "filled_win_pct": 39.05882352941176,
+          "filled_p10_pct": -5.507199999999999,
+          "remove_top5_filled_net_pct": -0.8316932330827065
+        }
+      }
+    },
+    "uncertainty": {
+      "lower_quantile": 0.00625,
+      "draws": 5000,
+      "block": 20,
+      "seed": 1729,
+      "metrics": {
+        "absolute": {
+          "mean_complete_day_pct": -0.20333766133395162,
+          "lower_pct": -0.5323158644495984,
+          "upper_pct": 0.11004315027336609,
+          "complete_days": 681,
+          "missing_days": [
+            "2019-07-10",
+            "2020-04-20",
+            "2020-05-29",
+            "2020-06-02",
+            "2020-06-16",
+            "2020-07-03",
+            "2020-07-07",
+            "2021-03-30",
+            "2021-04-29",
+            "2021-05-20",
+            "2021-05-27",
+            "2021-06-07",
+            "2021-08-23"
+          ]
+        },
+        "vs_original": {
+          "mean_complete_day_pct": 0.2124291620289394,
+          "lower_pct": -0.12246870458661516,
+          "upper_pct": 0.5575480530786706,
+          "complete_days": 662,
+          "missing_days": [
+            "2019-02-19",
+            "2019-02-21",
+            "2019-02-22",
+            "2019-06-14",
+            "2019-06-17",
+            "2019-07-10",
+            "2020-04-20",
+            "2020-05-19",
+            "2020-05-20",
+            "2020-05-29",
+            "2020-06-02",
+            "2020-06-16",
+            "2020-07-01",
+            "2020-07-02",
+            "2020-07-03",
+            "2020-07-07",
+            "2020-08-18",
+            "2020-08-19",
+            "2020-08-20",
+            "2021-03-30",
+            "2021-04-29",
+            "2021-05-18",
+            "2021-05-20",
+            "2021-05-27",
+            "2021-06-07",
+            "2021-07-05",
+            "2021-07-06",
+            "2021-07-07",
+            "2021-07-09",
+            "2021-07-12",
+            "2021-07-13",
+            "2021-08-23"
+          ]
+        },
+        "vs_matched": {
+          "mean_complete_day_pct": -0.16775339242293516,
+          "lower_pct": -0.531989236299675,
+          "upper_pct": 0.210165077143809,
+          "complete_days": 671,
+          "missing_days": [
+            "2019-04-25",
+            "2019-06-11",
+            "2019-07-09",
+            "2019-07-10",
+            "2020-01-21",
+            "2020-04-09",
+            "2020-04-20",
+            "2020-05-29",
+            "2020-06-02",
+            "2020-06-05",
+            "2020-06-16",
+            "2020-07-03",
+            "2020-07-07",
+            "2020-08-19",
+            "2020-09-25",
+            "2021-03-29",
+            "2021-03-30",
+            "2021-04-29",
+            "2021-05-20",
+            "2021-05-27",
+            "2021-06-07",
+            "2021-07-22",
+            "2021-08-23"
+          ]
+        }
+      }
+    }
+  },
+  "metric_scope": "条件化事件/槽位统计，不是有限资金组合回报或年化收益。",
+  "integration": {
+    "defaults": {
+      "capital": "100000",
+      "max_positions": 6,
+      "max_holding_sessions": 5,
+      "max_entry_gap_pct": "3",
+      "max_ma20_premium_pct": "8",
+      "top": 6,
+      "research_size": 6,
+      "mode": "auto",
+      "data_source": "recent",
+      "daily_update_budget": 600,
+      "run_budget": 600,
+      "daily_workers": 12
+    },
+    "scenarios": {
+      "1": {
+        "candidate_hash": "90d1d518ba4d5791ef005ad395d3b0d5b5dfeb9825a100fb1451bc2acdbe0941",
+        "stats": {
+          "universe": 5225,
+          "excluded": 228,
+          "incomplete": 0,
+          "evaluated": 4902,
+          "bullish": 1037,
+          "liquidity_excluded": 97,
+          "nominal_lot_excluded": 30,
+          "chase_excluded": 115,
+          "displayed": 6
+        },
+        "catalog": {
+          "count": 1037,
+          "groups": {
+            "breakout": 24,
+            "breakdown": 80,
+            "failed_breakout": 104,
+            "low_recovery": 109,
+            "bull_body_engulf": 25,
+            "bear_body_engulf": 106,
+            "inside": 160,
+            "outside": 125,
+            "upper_shadow": 314,
+            "lower_shadow": 52,
+            "range": 933
+          },
+          "unknown": 0
+        }
+      },
+      "2": {
+        "candidate_hash": "6fd3b7a9107a6147695a820fc8542030cc62cb28a20dbb90d17e4f60a4350fe5",
+        "stats": {
+          "universe": 5225,
+          "excluded": 228,
+          "incomplete": 0,
+          "evaluated": 4902,
+          "bullish": 985,
+          "liquidity_excluded": 97,
+          "nominal_lot_excluded": 82,
+          "chase_excluded": 115,
+          "displayed": 6
+        },
+        "catalog": {
+          "count": 985,
+          "groups": {
+            "breakout": 21,
+            "breakdown": 73,
+            "failed_breakout": 94,
+            "low_recovery": 102,
+            "bull_body_engulf": 24,
+            "bear_body_engulf": 99,
+            "inside": 155,
+            "outside": 118,
+            "upper_shadow": 302,
+            "lower_shadow": 48,
+            "range": 891
+          },
+          "unknown": 0
+        }
+      },
+      "6": {
+        "candidate_hash": "bdeb4b411f0015c8d7681b83890f1b3d744d123dccf22253a24ecd9b67561444",
+        "stats": {
+          "universe": 5225,
+          "excluded": 228,
+          "incomplete": 0,
+          "evaluated": 4902,
+          "bullish": 690,
+          "liquidity_excluded": 97,
+          "nominal_lot_excluded": 377,
+          "chase_excluded": 115,
+          "displayed": 2
+        },
+        "catalog": {
+          "count": 690,
+          "groups": {
+            "breakout": 13,
+            "breakdown": 46,
+            "failed_breakout": 55,
+            "low_recovery": 68,
+            "bull_body_engulf": 19,
+            "bear_body_engulf": 60,
+            "inside": 107,
+            "outside": 78,
+            "upper_shadow": 233,
+            "lower_shadow": 33,
+            "range": 631
+          },
+          "unknown": 0
+        }
+      }
+    }
+  },
+  "integration_baseline_comparison": {
+    "defaults_identical": true,
+    "all_three_case_candidate_hashes_identical": true,
+    "all_three_case_screen_stats_identical": true
+  },
+  "independent_implementation_review": "# K线实现独立盲核\n\n核验日期：2026-10-18。独立核验只读取实现源码、登记文件，运行人工构造的数值样本；未读取任何 `development-results`、`partial`、真实收益记录或2024/2025行情。没有运行研究 `main()`、修改主实现、访问或更新任何账户。以下结论不包含策略效果判断。\n\n## 结论\n\n当前版本的40项K线数值实现、批量轴方向、滞后窗口、复权整体缩放不变性均通过独立手算。`review()` 的20个复权因子对齐检查在初次核验发现缺口后已由主任务修复，本轮回归确认短因子、历史缺失因子和末日零因子均返回 unknown。图表及账户接入的代表性合成核验通过。\n\n研究代码符合固定73维扩展、原模型参数、同训练行/同标签/同权重及条件化H2评估的主要登记约束。未发现通过新增特征筛掉未来未成交/未知记录的代码。没有理由根据本次实现核验声称“有增量预测能力”；这需要登记检验的实际结果。\n\n仍有两项边界应明确：\n\n1. **预检是保守的全量失败机制，不是登记中可用率>=99%的完整实现。** `build.py` 对每个日期的整个横截面调用 `features`，任何一个无效OHLC会中断；成功后将 `finite_fraction` 写死为1.0，并未独立计算MA池分母。若所有原记录确实可用则不会歪曲结论；若以后有少量缺失，它不能按登记保留未知并完成>=99%判断，而应停止研究。失败路径也不会新写 `passed:false`；自动化复用时必须防止沿用旧预检文件。主任务告知本轮全部真实记录有限，本盲核未读取该真实数据或重新核算该比例。\n2. **输入必须是统一复权基础的OHLC，成交额单位必须是千元。** `features` 不读取因子；`review` 用信号日因子将整个已复权窗口折算成信号日价格。直接把逐日原始价格与变动因子交给它，会得到错误价位。人为构造一次2:1调整时，直接原始价格得到前5日高点25元，正确预先复权输入得到50元。账户接入使用经过校验的 DailyStore 数据，满足这个约定；独立CLI仍依赖调用者理解输入契约。没有日期/完成状态参数的数值API也不能独立验证“已收盘”“没有未来数据”；这一责任在调用方。\n\n## 实际运行的数值核验\n\n所有数值来自下列人工样本，无市场行情参与：前17根O/H/L/C为100/102/98/100，倒数3根为101/104/97/99、100/103/95/96、95/106/94/104。前19根成交额100，末根200；因子均为1。\n\n| 核验项 | 独立期望与结果 |\n|---|---|\n| 输出 | 单股 `(40,)`；两股批量 `(2,40)`；单股与批量逐项一致 |\n| 末日实体/振幅/上影/下影 | 9/12/2/1；实体占比0.75，上影1/6，下影1/12 |\n| 末日收盘平衡 | `(2×104−106−94)/12 = 2/3` |\n| ATR14 | `(11×4+7+8+12)/14 = 71/14 = 5.0714285714` |\n| 前5、前19高低 | 都为104/95；当日106/94不混入前期包络 |\n| 三期收盘推进 | `(104−100)/(71/14) = 56/71` |\n| 5日/前15日平均振幅 | `[(4+4+7+8+12)/5]/4 = 1.75` |\n| 成交额/前5均额 | 2.0；图中末日成交额200000元 |\n| 模式 | 外包日、阳实体覆盖前一阴实体、跌破前5低点后收回 |\n| 等于前5高点 | 末日收盘104等于高点104，被记为区间内，不算突破 |\n| 整体复权缩放 | OHLC与factor共同乘7后40项完全一致，review折算价位完全一致 |\n| 平盘20根 | 全部有限；仅成交额比为1，其余39项为0；不虚构小实体旗标 |\n| 输入拒绝 | 缺close、19根、NaN收盘、零成交额、high低于open、low高于close均unknown |\n| 修复后因子拒绝 | 1个因子、历史因子NaN、最后因子0均unknown |\n| 边界时点 | 调用方切到第20根时追加的第21根不影响结果；传入21根则API使用末20根，说明边界由调用方负责 |\n\n研究 `build.py` 使用 `v[t-19:t+1, idx]`，未取t+1；`prior5`使用`[-6:-1]`，`prior19`使用`[:-1]`；ATR可以含信号日当天，因为登记的已知时点是信号收盘。窗口和时点逻辑自洽。\n\n## 同模型与门槛核验\n\n阅读并导入 `structure-study/train.py`，没有调用其 `main()`。将其HGB构造器替换为纯内存记录器后，用同一组合成训练行分别传入33列及73列，验证基础33列、所选行、标签和样本权重一致。有限标签以外的未知行不参与拟合；MA池外行不参与拟合；标签截断±0.2。两日期分别2条、1条时权重为0.75、0.75、1.5，两日期总权重相等。\n\n捕获参数为：`max_leaf_nodes=7,max_iter=150,learning_rate=.05,min_samples_leaf=500,l2_regularization=10,early_stopping=False,random_state=1729`，与登记相同。这个检查验证数据管线和构造参数，不冒充实际训练验证。\n\n对事件生成器传入全负预测：仍生成top2；预测排名最高且未来标签未知的合成股票仍保留为未知；没有MA候选但原数据有该日期时保留2个空位。可排除“prediction>0筛选”及“只预测已知成交行”这两类管线偏差。\n\n发展期33维对照读取已有study06事件，不是本次重新训练；其数学逻辑与新模型共享同一个`fit`/`eval_model`函数。确认期明确恢复`base_x`并按相同2016–2021训练掩码重新训练33维模型。由于保持盲核，没有读取历史对照事件逐条核对或检验其来源散列；实际冻结清单必须覆盖该事件文件及数据/共享实现。\n\n`assess`补充绝对区间下界>0，发展和确认都调用默认`.05/8`，因此未误用共享实现中另一确认模式的`.05/3`。合成3个年份、84个日期、收益恒为3%/1%/2%的新模型/原策略/同模型对照，5000次20日分年循环区块抽样产生绝对及两项差值下界3%/2%/1%，符合手算。其未知值处理是整日完整案例，不将未知填0；门槛同时报告未知比例。是否存在缺失机制偏差需要报告实际完整日数量，不能由此例证明不存在。\n\n`release_ranking_allowed`始终false；H2确认只在发展通过后运行；没有读取2024/2025的执行分支。代码没有H5执行分支，而登记仅允许在H2确认通过后再做H5，没有要求无条件必须执行H5。\n\n## 图表、CLI与账户接入\n\n用另一组人工20根上涨序列（close从10到11、open=close−.05、high=close+.2、low=close−.2，amount=20000，factor=1，vwap=close，volume=200000/close）执行：\n\n- `kline_report.render` 的SVG可被XML解析器解析，恰有20组K线与20个含OHLC数值的title；日期中的`<x>&`正确转义；平盘图无NaN，unknown状态不画图。\n- CLI在临时目录输出computed JSON和HTML、返回0；缺字段输入输出unknown、返回1；同一非空输出目录二次调用返回2，拒绝覆盖。临时目录已删除。\n- `scan_account`接入内存FakeStore，使用人工2017日期、上市超过252天及完整一致的8个字段；产生1个候选且附computed K线证据。所有字段读取边界都严格为`last-19,last`；附带20个会话日与所取窗口一致。没有使用真实账户。\n\n未进行像素截图或浏览器视觉验收；本轮图表核验是结构、坐标有限性、条数、数值和转义检查。\n\n## 核心复现用例\n\n在工作区根目录执行下面脚本即可复现关键几何、缩放、批量、缺失、平盘与图表验证：\n\n```python\nimport sys, copy\nimport numpy as np\nimport xml.etree.ElementTree as ET\nsys.path.insert(0, 'final-skill/tail-screener/scripts')\nfrom tail_screener.kline import features, review, FEATURE_NAMES\nfrom tail_screener.kline_report import render\n\nf = {k: np.full(20, v, dtype=float) for k, v in\n     [('open',100),('high',102),('low',98),('close',100),\n      ('amount',100),('factor',1)]}\nfor i, row in [(17,(101,104,97,99)),(18,(100,103,95,96)),\n               (19,(95,106,94,104))]:\n    for key, value in zip(('open','high','low','close'), row):\n        f[key][i] = value\nf['amount'][-1] = 200\nv = features(f)\nassert v.shape == (40,)\nm = dict(zip(FEATURE_NAMES, v))\natr = 71/14\nexpected = [9/95,12/95,.75,2/95,1/6,1/95,1/12,8/95,2/3]\nnp.testing.assert_allclose(v[:9], expected)\nfor lag in (1,2):\n    o,h,l,c = [f[k][-1-lag] for k in ('open','high','low','close')]\n    span = h-l\n    expected = [(c-o)/o,span/o,(c-o)/span,(h-max(o,c))/o,\n                (h-max(o,c))/span,(min(o,c)-l)/o,\n                (min(o,c)-l)/span,(2*c-h-l)/o,(2*c-h-l)/span]\n    np.testing.assert_allclose(v[lag*9:(lag+1)*9], expected)\nnp.testing.assert_allclose(v[27:],\n    [0,1,1,0,0,9/atr,0,9/atr,1.75,2,4/atr,0,1])\nscaled = {k: a*(7 if k in ('open','high','low','close','factor')\n                       else 1) for k,a in f.items()}\nnp.testing.assert_allclose(features(scaled), v, atol=1e-14)\nassert review(scaled) == review(f)\nbatch = {k: np.stack((f[k],scaled[k]), axis=1) for k in f}\nnp.testing.assert_allclose(features(batch), np.stack((v,v)), atol=1e-14)\nassert review(batch)['status'] == 'unknown'\nflat = {k: np.full(20, 1. if k=='factor' else 100.) for k in f}\nfv = features(flat)\nassert np.isfinite(fv).all() and np.count_nonzero(fv) == 1\nassert fv[FEATURE_NAMES.index('k_amount_over_prior5')] == 1\nfor factor in (np.ones(1),np.r_[np.nan,np.ones(19)],\n               np.r_[np.ones(19),0]):\n    x = copy.deepcopy(f); x['factor'] = factor\n    assert review(x)['status'] == 'unknown'\nfor key,value in [('close',np.nan),('amount',0),('high',90),('low',110)]:\n    x = copy.deepcopy(f); x[key][5] = value\n    assert review(x)['status'] == 'unknown'\nassert review({k:a[:-1] for k,a in f.items()})['status'] == 'unknown'\nx=copy.deepcopy(f); x.pop('close')\nassert review(x)['status'] == 'unknown'\nr=review(f); r['sessions']=['fixture']*19+['<x>&']\nhtml=render(r)\nsvg=ET.fromstring(html[html.index('<svg'):html.index('</svg>')+6])\nassert len(svg.findall('g')) == 20\nassert len(svg.findall('.//title')) == 20\nassert '&lt;x&gt;&amp;' in html\nprint('PASS: independent geometry, batch, adjustment, rejection, SVG')\n```\n\n核验结束时主文件SHA256：\n\n| 文件 | SHA256 |\n|---|---|\n| `kline.py` | `113fa885e168ccd55d23cf6330511320aaae75ae9e1936f88ffc034366965402` |\n| `registration.json` | `54155c964c75ffd0fc5c3f2c6ea79e14dbf338329d1cf90acffe92c1a1a27d0f` |\n| `build.py` | `13b9784490def47420d5757bf8dc59c394ff6f824efb56e699effda11dbcf118` |\n| `train.py` | `dd92c812d50df5b6d29f803bddbd42e2ce125393bc503609e5af80adf337bfa7` |\n",
+  "independent_result_review": "# K线研究结果与发布独立复核\n\n日期：2026-10-18。此复核接续先前盲核，在主任务明确授权后才读取本轮2019–2021发展结果及2016–2023既有数据标签。未访问2024/2025行情、收益或账户；未修改主实现，也没有重训、改参或重新选择模型。\n\n## 发布结论\n\n**不能将40项K线扩展晋级为默认排序。** 本轮研究失败，`decision.json` 中 `development_passed:false`、`release_ranking_allowed:false`、`heldout_opened:false` 与独立核验一致。可以发布已通过数值和功能核验的K线描述、图表、目录查询功能，同时保留原流动性排序；不得把形态证据描述为已经验证的增量收益能力。\n\n## 结果复算\n\n未调用主实现的`summary`、`intervals`或`gates`。使用独立代码从事件明细重新分组、计算均值/分位数/去除最大5笔均值，按登记重新生成抽样索引并计算区间，随后逐字段对照。比较容差为1e-12。所有已报告汇总及年度结果一致。\n\n| 指标 | 新K线73维 | 原流动性top2 | 同模型33维 |\n|---|---:|---:|---:|\n| 槽位 | 1388 | 1388 | 1388 |\n| 成交 | 1210 | 1279 | 1197 |\n| 取消 | 165 | 89 | 179 |\n| 未知 | 13 | 20 | 12 |\n| 已知槽位净均值 | −0.193134% | −0.381057% | +0.036255% |\n| 成交净均值 | −0.219470% | −0.407573% | +0.041676% |\n| 成交毛均值 | +0.257099% | +0.045513% | +0.518381% |\n| 平均成本 | 0.476569% | 0.453086% | 0.476705% |\n| 删除最大5笔后成交净均值 | −0.337602% | −0.479213% | −0.138688% |\n| 成交净收益p10 | −5.526611% | −4.589726% | −5.604547% |\n\n这些是登记的条件化事件/槽位统计，不是有限资金账户组合回报、年化收益或实际实盘业绩。\n\n| 年份 | 新模型成交数 | 新模型未知/槽位 | 新模型已知槽位净均值 | 原策略已知槽位净均值 |\n|---|---:|---:|---:|---:|\n| 2019 | 410 | 1/464 | −0.319811% | −0.245989% |\n| 2020 | 400 | 6/462 | −0.563515% | −0.298357% |\n| 2021 | 400 | 6/462 | +0.305870% | −0.599832% |\n\n2019和2020低于原策略；2021改善不能抵消逐年门槛失败。总体虽然好于原流动性基准，但仍为负且弱于同模型33维对照，不支持新增特征有效。\n\n## 独立配对区间\n\n独立实现使用全部694个相同信号日；每日期2个槽位，取消为0，含任一未知槽位的该模型日期记为NaN。配对差只在两边日期都完整时定义。随机种子1729，按2019/2020/2021分层，各层从该年日期序列抽取循环20日块，截断回原年日期数；5000次抽样，分位数`.05/8=.00625`及`.99375`。此程序没有导入研究实现，逐项复制的是登记抽样定义而非函数调用。\n\n| 对象 | 完整日均值 | 下界 | 上界 | 完整日期 |\n|---|---:|---:|---:|---:|\n| 新模型绝对净值 | −0.203338% | −0.532316% | +0.110043% | 681 |\n| 新模型−原流动性 | +0.212429个百分点 | −0.122469个百分点 | +0.557548个百分点 | 662 |\n| 新模型−33维同模型 | −0.167753个百分点 | −0.531989个百分点 | +0.210165个百分点 | 671 |\n\n均值、两端分位数、完整日期数及每一项缺失日期清单全部与保存结果一致。三个下界均未大于0。按日完整案例均值与按已知槽位均值不同是分母/缺失处理不同所致，不是计算错误；应保留此区别。\n\n独立重建门槛得到完全相同的9项失败：2019和2020低于原策略；成交净均值、已知槽位净均值、去最大5笔净均值非正；未优于33维；绝对及两项配对区间下界不为正。年度成交数和未知比例门槛通过；p10相对原策略恶化约0.936884个百分点，未超过2个百分点限制。不能以通过部分门槛替代全部通过。\n\n## 冻结与事件来源\n\n- 对`freeze.json`列出的9个文件逐个流式计算SHA256，全部匹配，包括登记、构建/训练源码、特征矩阵、预检、原dataset、共享训练实现、study06事件及kline.py。\n- 本轮`matched33`与`structure-study/development-events.json`中`ma_pool_ma_exit.top2`整个列表逐条完全相同，包含日期、代码、次序、预测和结果字段，没有换用异年或其他变体。\n- 通过NPZ按列读取`dateidx/codeidx/days/codes/ma_pool`及H2 MA退出标签、状态、成本、退出日期，核对new、original、matched33和top6共8328条事件。每条都在MA池内，状态、收益、成本、退出日逐值精确相同。最大数据日期为2023-12-29；没有读取任何2024/2025文件。\n- 从dataset的20日均成交额、当日成交额和代码独立排序，全部694日原流动性top2与保存的original一致。\n- 新模型、同模型33维均覆盖相同694日，每日top2无重复代码；本轮top6共4164条，逐日其前2条与new完全一致，预测值排序非递增。负预测没有因此被删除。\n- 本次没有重训模型，也没有重新核算全部候选预测。确认范围是冻结输入一致、事件来源/标签一致、已选排序内部一致及统计复算一致；不是对模型拟合全过程的重演。\n\n## 原始价格CLI修复回归\n\n先前盲核提出的CLI单位/复权契约问题已得到修复。运行新的`analyze_kline.py`，合成20根平盘样本：前10根原始价格100、factor=1；后10根原始价格50、factor=2；每日成交额100000元，20个递增ISO日期。\n\n`price_basis=raw, amount_unit=yuan`时，CLI逐日将原始OHLC乘对应factor，再按末日factor折算展示。输出所有20根价格均为50，前5日高低均为50，成交额均为100000元。与手工预先复权的`price_basis=adjusted, amount_unit=thousand_yuan`输入相比，除输入标记外全部输出完全相同。先前误得到25元的问题已消除。\n\n以下8类合成输入均在写输出前返回退出码2：缺price_basis、缺amount_unit、不支持的price_basis、日期逆序、日期重复、日期数量不对齐、非规范ISO日期、factor数组与价格长度不对齐。CLI仍允许省略sessions，省略时图表使用相对根数；提供日期时执行严格对齐递增验证。输入日期本身不证明交易日有效或当日已收盘，这仍是数据来源责任。\n\n## 目录与partial语义\n\n独立构造3条候选：突破且长上影、unknown、区间内且内包。验证`build`：\n\n- 输出3条、unknown=1；按成交额排序，不按形态或预期收益排序。\n- breakout、upper_shadow、inside、range各计数1，unknown不虚构形态。\n- 目录去除每条candles和sessions以限制体积，保留其他结构证据。\n- 分组查询、6位代码查询、小写完整代码查询均命中正确对象；limit只影响returned，不改变matched；非法limit（0、501、True、1.5）拒绝。\n- 源报告execution completed、data complete、requested/data/catalog三日期一致且没有data_issues时为complete；执行失败、数据partial、data日期不匹配、requested日期不匹配、有data_issues、缺run状态六种情形均为partial；没有目录时unavailable。\n- `query_kline.py`对complete返回0，对partial返回1且保留partial标记及可用行，不把不完整运行伪装为完整结果。\n\n静态检查确认`account_strategy.scan_account`以展示截断前的全部合格rows建立目录，`account_runner`将其加入报告，故目录不局限于展示top6。`individual_disclosures_reviewed:false`清晰保留，目录查询不是个股公告审查或交易授权。\n\n所有CLI测试使用隔离临时目录，测试结束删除；未访问或改变现有账户。\n",
+  "forward_scenario": {
+    "passed": true,
+    "source": "saved offline report",
+    "account_unchanged": true,
+    "queries": "outside displayed six; breakout and failed_breakout; eight each",
+    "parameters": "capital, display size, position limit and holding period remain independent inputs"
+  },
+  "research_input_hashes": {
+    "frozen_at": "2026-10-18T04:12:26.259938+00:00",
+    "files": {
+      "/workspace/scratch/42f05790f224/selection-research-next/kline-study/registration.json": "54155c964c75ffd0fc5c3f2c6ea79e14dbf338329d1cf90acffe92c1a1a27d0f",
+      "/workspace/scratch/42f05790f224/selection-research-next/kline-study/build.py": "13b9784490def47420d5757bf8dc59c394ff6f824efb56e699effda11dbcf118",
+      "/workspace/scratch/42f05790f224/selection-research-next/kline-study/train.py": "dd92c812d50df5b6d29f803bddbd42e2ce125393bc503609e5af80adf337bfa7",
+      "/workspace/scratch/42f05790f224/selection-research-next/kline-study/features.npy": "4f8fee2549b6f4977cf396f9eff4b7d56978d21d9d697b1c660661fd220cf8e4",
+      "/workspace/scratch/42f05790f224/selection-research-next/kline-study/preflight.json": "e2c72d35b6497fb934f5ac2fdea3be1188d612b0068ebaf4238887757e8bb72a",
+      "/workspace/scratch/42f05790f224/selection-research-next/structure-study/dataset.npz": "0325ac9bc351e9cf33a1968e66f0d1ad5a934723ae439c8e25df593ad97a944e",
+      "/workspace/scratch/42f05790f224/selection-research-next/structure-study/train.py": "01031ed59758add0b6b3990a51a263277ebaa0dc51be149d6b1cf8c8e4288be1",
+      "/workspace/scratch/42f05790f224/selection-research-next/structure-study/development-events.json": "20db34f16bce744e2c16907f5c015934a3408fcc9214b08744cde15325be3b60",
+      "/workspace/scratch/42f05790f224/final-skill/tail-screener/scripts/tail_screener/kline.py": "113fa885e168ccd55d23cf6330511320aaae75ae9e1936f88ffc034366965402"
+    }
+  },
+  "holdout_2024_2025_opened": false,
+  "active_model_artifact": null
+}

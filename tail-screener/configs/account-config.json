@@ -1,0 +1,16 @@
+{
+  "schema_version": 1,
+  "strategy": "ma5-20-account",
+  "capital": "100000",
+  "max_positions": 6,
+  "max_holding_sessions": 5,
+  "max_entry_gap_pct": "3",
+  "max_ma20_premium_pct": "8",
+  "top": 6,
+  "research_size": 6,
+  "mode": "auto",
+  "data_source": "recent",
+  "daily_update_budget": 600,
+  "run_budget": 600,
+  "daily_workers": 12
+}

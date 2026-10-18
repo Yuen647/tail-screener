@@ -1,0 +1,7 @@
+{
+  "schema_version": 1,
+  "securities": [
+    {"code": "SZ300059", "listing_date": "2010-03-19"},
+    {"code": "SH688981", "listing_date": "2020-07-16"}
+  ]
+}

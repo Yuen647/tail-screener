@@ -1,0 +1,6 @@
+{
+  "registered_at": "2026-10-16T05:50:01.426267+00:00",
+  "phase": "before historical account outcome calculation",
+  "change": "Before ranking require signal-close minimum lot plus base fees <=19000 CNY, a fixed initial19% allocation feasibility screen; actual entry uses current cash/NAV and may still reject. Applies to five-slot extension, not original single-stock control.",
+  "reason": "Initial current-screen check exposed lots already unaffordable at signal; no historical profits viewed."
+}

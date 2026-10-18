@@ -1,0 +1,47 @@
+{
+  "schema_version": 1,
+  "registered_at": "2026-10-16T05:39:32.353161+00:00",
+  "strategy_id": "akquant-ma5-20-account",
+  "source_commit": "e4da08fdaae822eb8c652726f1baa7779fa3d31a",
+  "source_rule": {
+    "short": 5,
+    "long": 20,
+    "entry": "SMA5>SMA20 while flat; equality does nothing; not necessarily a new crossover",
+    "exit": "SMA5<SMA20 while held; exit persists until completed",
+    "original_single_stock": "SZ000001",
+    "original_target_weight": 0.95
+  },
+  "local_adaptations": {
+    "universe": "historical SH/SZ A only, identities deduplicated; current risk names excluded for current reports only",
+    "ranking": "bullish stocks sorted by prior20 average RMB turnover, then signal close turnover; exact final ties all displayed, ambiguous allocation boundary unfilled",
+    "allocation": "100000 CNY, at most5 positions; each new position gross plus costs <=19% previous close NAV; >=5% reserve at order sizing; no daily rebalancing/no pyramiding",
+    "liquidity": "20 complete quality bars, >=252 archive calendar sessions since first source record, prior20 average amount >=10000000 CNY; gross <=1% prior turnover; reject posthoc if >1% whole day shares",
+    "timing": "completed close signal, next exchange session open; missing pre-open frozen signal never backfilled into prospective entry",
+    "orders": "sells before buys; sale proceeds reused same day, T+1stock; no leverage; pending exits retained through blocks; unfilled entry expires that session, no hindsight replacements",
+    "holding": "until inverse MA inequality, no fixed number of days; deferred exits reported",
+    "execution": "conditional daily-bar scenario, one-price blocked and absolute opening gap>=4.5% blocked; not official limit/auction verification",
+    "costs": "commission3bps each side minimum5 CNY, transfer2/1 tenths bp before/from2022-04-29, sell stamp10/5bps before/from2023-08-28, adverse slippage10bps eachside; repeat with allcosts2x",
+    "company_actions": "verified explicit cash/net/share events supported; incompatible factor intervals without event freeze that position and make NAV incomplete; no dividend/split inferred from factor",
+    "unavailable_mark": "retain position/cash, carry lastmark only as indicative; total NAV/returns withheld when incomplete; no liquidation at stale prices"
+  },
+  "research_budget": {
+    "new_rules": 1,
+    "parameter_search": false,
+    "periods": [
+      "2018-2020",
+      "2021-2023",
+      "2024-2026"
+    ],
+    "historical_role": "already-seen development/rejection evidence only",
+    "benchmarks": [
+      "cash",
+      "SH000300 price index, no dividend/cost"
+    ]
+  },
+  "admission": {
+    "historical": "positive net and benchmark difference in each period, positive2xcost, no unresolved NAV or execution-data gaps, chronological block uncertainty excludes0",
+    "forward": "genuine pre-entry frozen records; strategy/engine/data versions fixed; complete results and practical risk/cost review; no automatic certification by elapsed days",
+    "current_recommendation_eligible": false
+  },
+  "normal_use": "free/noaccount/autodependencies/no broker orders; standing conditional paper account updated on invocation, no unattended service implied"
+}

@@ -1,0 +1,90 @@
+{
+  "strategy_id": "minervini-trend",
+  "version": "3.1.0",
+  "status": "implemented_candidate_screen_profitability_validation_pending",
+  "source": {
+    "title": "MarketSmith HK：Minervini趋势模型",
+    "url": "https://www.marketsmith.hk/v2/blog/the-holy-grail-in-investing-mark-minervini-trend-mode-cn?lang=zh-hans",
+    "published_at": "2023-08-08",
+    "applicability": "Source explicitly provides A-share template examples and ratings; not evidence of A-share profitability"
+  },
+  "universe": "Only Shanghai and Shenzhen A-share common stocks. No ETF, fund, B-share, HK, BJ or indices.",
+  "rule_conditions": [
+    {
+      "id": "price_above_long_ma",
+      "expression": "C > SMA150 and C > SMA200",
+      "origin": "published_template"
+    },
+    {
+      "id": "long_ma_alignment",
+      "expression": "SMA150 > SMA200",
+      "origin": "published_template"
+    },
+    {
+      "id": "sma200_uptrend",
+      "expression": "SMA200[t] > SMA200[t-120 trading sessions]",
+      "origin": "local_formalization",
+      "source_wording": "MA200 upward trend for at least120 days",
+      "limitation": "Endpoint rise does not prove every intervening slope positive; do not claim exact commercial implementation"
+    },
+    {
+      "id": "medium_ma_alignment",
+      "expression": "SMA50 > SMA150 and SMA50 > SMA200",
+      "origin": "published_template"
+    },
+    {
+      "id": "price_above_medium_ma",
+      "expression": "C > SMA50",
+      "origin": "published_template"
+    },
+    {
+      "id": "above_52_week_low",
+      "expression": "C >= 1.30 * min(adjusted_daily_low over252trading sessions;52weekapproximation)",
+      "origin": "published_template"
+    },
+    {
+      "id": "near_52_week_high",
+      "expression": "C >= 0.75 * max(adjusted_daily_high over252trading sessions;52weekapproximation)",
+      "origin": "published_template"
+    },
+    {
+      "id": "relative_strength",
+      "expression": "a_share_annual_return_percentile_proxy >= 70",
+      "origin": "free_local_proxy",
+      "not_equivalent_to": "proprietary MarketSmith/IBD RS Rating"
+    }
+  ],
+  "rs_proxy_recommendation": {
+    "input": "adjusted close(t)/adjusted close(t-252 trading sessions)-1; fixed-session approximation to12months",
+    "universe": "All in-scope, non-excludedSH/SZcodes with253completepositiveOHLCV observations before applying trend conditions; disclose exclusion and missing counts",
+    "rank": "average ties; ascending rank amongN; 1+98*(rank-1)/(N-1); singleton neutral50, not99",
+    "display": "沪深A相对强度代理",
+    "source": "https://www.marketsmith.hk/overview/details-tab-s?lang=zh-hans",
+    "limitations": "Proprietary weighting and rounding not reproduced. Not RSI, probability, winrate or expected return."
+  },
+  "display_order_recommendation": [
+    "unrounded_rs_proxy desc (equivalent to252sessionreturn)",
+    "include all exact boundary ties",
+    "security_code asc within ties for display only"
+  ],
+  "display_count_default": 5,
+  "portfolio_size": null,
+  "entry_rule": null,
+  "exit_rule": null,
+  "fixed_holding_days": null,
+  "holding_display": "模板未规定固定持有期；需结合入场形态与退出计划",
+  "claims_excluded": [
+    "full SEPA reproduction",
+    "author endorsement",
+    "verified short-term A-share alpha",
+    "guaranteed profit",
+    "Top50backtest supports Top5portfolio"
+  ],
+  "public_source_license": "No redistribution license established. Link and paraphrase public facts; do not package full article or protected charts.",
+  "implementation_windows": {
+    "formula_history_sessions": 320,
+    "annual_high_low_sessions": 252,
+    "annual_return_lag_sessions": 252,
+    "sma200_comparison_lag_sessions": 120
+  }
+}
